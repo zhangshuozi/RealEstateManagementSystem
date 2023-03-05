@@ -35,12 +35,24 @@ public class OwnerController
 //        分页构造器
         Page<Owner> page1 = new Page<>(page,pageSize);
         LambdaQueryWrapper<Owner> queryWrapper= new LambdaQueryWrapper<>();
-//        如果有查询条件则按照查询条件  特定名称的人
-        if (name!=null){queryWrapper.eq(Owner::getName,name);}
+//        如果有查询条件则按照查询条件  进行模糊查询
+        queryWrapper.like(name!=null,Owner::getName,name);
 //        根据创建时间降序排序
         queryWrapper.orderByDesc(Owner::getCreateTime);
-        Page<Owner> pageInfo = ownerService.page(page1,queryWrapper);
-        return R.success(pageInfo);
+        ownerService.page(page1,queryWrapper);
+        return R.success(page1);
+    }
+
+//    获取到某个员工的id进行修改
+    @GetMapping("{id}")
+    public R<Owner> getOne(@PathVariable("id") Long id)
+    {
+        if (id!=null)
+        {
+            Owner oneInfo = ownerService.getById(id);
+            return R.success(oneInfo);
+        }
+        return R.error("没拿到这个人的信息");
     }
 
 //    添加一个新的业主
@@ -51,5 +63,26 @@ public class OwnerController
         ownerService.save(owner);
         return R.success("卖家信息添加成功!");
     }
+
+//    对单个卖家信息的删除
+    @DeleteMapping("{id}")
+    public R<String> delOwner(@PathVariable Long id)
+    {
+        if (id!=null){
+            ownerService.removeById(id);
+            return R.success("删除成功");
+        }
+        return R.error("业务繁忙,删除失败，请重试");
+
+    }
+
+//    更新卖家信息
+    @PutMapping
+    public R<String> updateOwner(@RequestBody Owner owner)
+    {
+        ownerService.updateById(owner);
+        return R.success("更新成功");
+    }
+
 
 }
