@@ -2,6 +2,7 @@ package com.shuozi.mapper;
 
 import com.shuozi.entity.Action;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -9,8 +10,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author zhangshuo
- * @since 2023-03-22
+ * @since 2023-03-24
  */
+@Mapper
 public interface ActionMapper extends BaseMapper<Action> {
 
 }

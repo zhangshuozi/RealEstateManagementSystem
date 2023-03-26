@@ -1,6 +1,5 @@
 package com.shuozi.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
@@ -18,7 +17,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author zhangshuo
- * @since 2023-03-22
+ * @since 2023-03-24
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -33,19 +32,15 @@ public class AccessRecord implements Serializable {
     private Long id;
 
     @ApiModelProperty(value = "登录用户id")
-    @TableField("user_id")
     private Long userId;
 
     @ApiModelProperty(value = "0代表登出 1 代表登入")
-    @TableField("access_type")
     private String accessType;
 
     @ApiModelProperty(value = "登入 登出时间")
-    @TableField("access_time")
     private LocalDateTime accessTime;
 
     @ApiModelProperty(value = "用户登入或登出对应的IP地址")
-    @TableField("access_ip")
     private String accessIp;
 
 

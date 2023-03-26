@@ -1,7 +1,9 @@
 package com.shuozi.service;
 
-import com.shuozi.entity.FactoryHouseInfo;
+import com.shuozi.entity.LayerLevel;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -11,6 +13,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author zhangshuo
  * @since 2023-03-24
  */
-public interface IFactoryHouseInfoService extends IService<FactoryHouseInfo> {
+public interface ILayerLevelService extends IService<LayerLevel> {
 
+    List<LayerLevel> getAll();
 }

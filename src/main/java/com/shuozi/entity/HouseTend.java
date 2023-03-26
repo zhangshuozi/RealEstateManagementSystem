@@ -1,6 +1,5 @@
 package com.shuozi.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -17,7 +16,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author zhangshuo
- * @since 2023-03-22
+ * @since 2023-03-24
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -32,7 +31,6 @@ public class HouseTend implements Serializable {
     private Long tendId;
 
     @ApiModelProperty(value = "朝向名称")
-    @TableField("tend_name")
     private String tendName;
 
 

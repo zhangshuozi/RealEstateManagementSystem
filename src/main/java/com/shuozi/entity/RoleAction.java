@@ -1,6 +1,5 @@
 package com.shuozi.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -17,7 +16,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author zhangshuo
- * @since 2023-03-22
+ * @since 2023-03-24
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -33,7 +32,6 @@ public class RoleAction implements Serializable {
     private Long actionId;
 
     @ApiModelProperty(value = "角色的编号")
-    @TableField("role_id")
     private Long roleId;
 
 

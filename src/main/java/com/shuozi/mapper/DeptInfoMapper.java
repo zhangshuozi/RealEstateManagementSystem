@@ -1,6 +1,6 @@
 package com.shuozi.mapper;
 
-import com.shuozi.entity.HouseTend;
+import com.shuozi.entity.DeptInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,6 +13,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2023-03-24
  */
 @Mapper
-public interface HouseTendMapper extends BaseMapper<HouseTend> {
+public interface DeptInfoMapper extends BaseMapper<DeptInfo> {
 
 }

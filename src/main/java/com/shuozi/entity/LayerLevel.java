@@ -1,6 +1,6 @@
 package com.shuozi.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
+import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -17,23 +17,25 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author zhangshuo
- * @since 2023-03-22
+ * @since 2023-03-24
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("sell_point")
-@ApiModel(value="SellPoint对象", description="")
-public class SellPoint implements Serializable {
+@TableName("layer_level")
+@ApiModel(value="LayerLevel对象", description="")
+public class LayerLevel implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "sell_point_id", type = IdType.AUTO)
-    private Long sellPointId;
+    @TableId(value = "layer_level_id", type = IdType.AUTO)
+    private Long layerLevelId;
 
-    @ApiModelProperty(value = "具体卖点")
-    @TableField("sell_point_name")
-    private String sellPointName;
+    @ApiModelProperty(value = "层级名称")
+    private String layerLevelName;
+
+    @ApiModelProperty(value = "区分部门层级的一个权重")
+    private BigDecimal weight;
 
 
 }

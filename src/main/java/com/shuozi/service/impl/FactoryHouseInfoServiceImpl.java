@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author zhangshuo
- * @since 2023-03-22
+ * @since 2023-03-24
  */
 @Service
 public class FactoryHouseInfoServiceImpl extends ServiceImpl<FactoryHouseInfoMapper, FactoryHouseInfo> implements IFactoryHouseInfoService {
